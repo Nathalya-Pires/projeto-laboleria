@@ -2,7 +2,7 @@ import joi from "joi";
 
 const clientsSchema = joi.object({
   name: joi.string().required().min(3),
-  address: joi.string().min(5).required(),
+  address: joi.string().min(1).required(),
   phone: joi
     .string()
     .required()
