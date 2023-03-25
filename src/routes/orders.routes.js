@@ -1,10 +1,11 @@
 import { Router } from "express";
-import { validateSchema } from "../middlewares/validateSchema.js";
-import ordersSchema from "../schemas/ordersSchema.js";
+import { createOrder } from "../controllers/orders.controller.js";
+import { validateSchemaOrders } from "../middlewares/orders.middleware.js";
+
 
 const ordersRouter = Router();
 
-ordersRouter.post("/order", validateSchema(ordersSchema), () => {});
+ordersRouter.post("/order", validateSchemaOrders, createOrder);
 ordersRouter.get("/orders", () => {});
 ordersRouter.get("/orders/:id", () => {});
 
