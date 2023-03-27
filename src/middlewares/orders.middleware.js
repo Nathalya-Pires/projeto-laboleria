@@ -24,6 +24,7 @@ export async function validateSchemaOrders(req, res, next) {
   const consultPrice = await db.query(`SELECT price FROM cakes WHERE id = $1`, [
     order.cakeId,
   ]);
+
   const price = consultPrice.rows[0].price;
   // console.log(price);
 
