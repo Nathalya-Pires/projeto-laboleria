@@ -26,7 +26,6 @@ export async function validateSchemaOrders(req, res, next) {
   ]);
 
   const price = consultPrice.rows[0].price;
-  // console.log(price);
 
   res.locals.order = { ...order, price };
 

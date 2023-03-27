@@ -5,7 +5,6 @@ export async function createOrder(req, res) {
 
   try {
     const totalPrice = quantity * price;
-    // console.log(totalPrice);
 
     await db.query(
       `INSERT INTO orders ("clientId", "cakeId", quantity, "createdAt", "totalPrice") VALUES ($1, $2, $3, now(), $4)`,

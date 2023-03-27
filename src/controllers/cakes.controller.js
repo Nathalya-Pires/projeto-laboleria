@@ -8,8 +8,6 @@ export async function createCake(req, res) {
       name,
     ]);
 
-    // console.log(cakeExist);
-
     if (cakeExist.rowCount !== 0) return res.sendStatus(409);
 
     await db.query(
@@ -23,5 +21,3 @@ export async function createCake(req, res) {
     res.sendStatus(500);
   }
 }
- 
-
